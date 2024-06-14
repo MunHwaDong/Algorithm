@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+
+int Max(int a, int b)
+{
+	return a > b ? a : b;
+}
+
+int solved(std::vector<int>& seq, int n, int k)
+{
+	int max = 0;
+	int start = 0, end = 0;
+	int mid_result = 0;
+
+	for (end = 0; end < k; ++end)
+	{
+		mid_result += seq[end];
+	}
+
+	if (n == k)
+		return mid_result;
+	else
+	{
+		max = Max(max, mid_result);
+		--end;
+	}
+
+	while (end + 1 < n)
+	{
+		mid_result = mid_result - seq[start++] + seq[++end];
+		max = Max(max, mid_result);
+	}
+
+	return max;
+}
+
+int main()
+{
+
+	int n, k = 0;
+
+	std::cin >> n >> k;
+
+	std::vector<int> seq(n);
+
+	for (int i = 0; i < n; ++i)
+		std::cin >> seq[i];
+
+	std::cout << solved(seq, n, k) << std::endl;
+
+	return 0;
+}

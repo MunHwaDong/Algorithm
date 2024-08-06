@@ -1,12 +1,3 @@
-/*
-
-    20171625 박종한 화일처리 B-Tree 리포트.
-    삽입 : 성공.
-    삭제 : 성공.
-
-*/
-
-
 #include <iostream>
 #include <stack>
 #include <vector>

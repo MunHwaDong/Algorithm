@@ -1,12 +1,3 @@
-/*
-
-    20171625 ������ ȭ��ó�� AVL ����Ʈ.
-    ���� : ����.
-    ���� : ����.
-
-*/
-
-
 #include <iostream>
 #include <vector>
 #include <cmath>

@@ -17,6 +17,7 @@
 #include <numeric>
 
 using namespace std;
+
 "https://www.acmicpc.net/problem/9663"
 
 vector<bool> colcheck(14, 0);
@@ -46,6 +47,10 @@ void solve(int k)
 
     for(int idx = 0; idx < n; ++idx)
     {
+        /*
+            1. 퀸을 배치하면 같은 행에는 퀸을 배치 할 수 없으니, 행에 대해 체크할 필요는 없다.
+            2. 정사각행렬임으로, x+y를 하면 행렬의 대각 성분들만을 검사할 수 있다.
+        */
         if(colcheck[idx] || nwcheck[k+idx] || swcheck[idx-k+n-1]) continue;
 
         colcheck[idx] = 1;

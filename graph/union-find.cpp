@@ -19,8 +19,8 @@ void Union(vector<int>& parents, int v1, int v2)
     int v1Parents = FindParent(parents, v1);
     int v2Parents = FindParent(parents, v2);
 
-    if(v1Parents < v2Parents) parents[v2] = v1;
-    else parents[v1] = v2;
+    if(v1Parents < v2Parents) parents[v2Parents] = v1Parents;
+    else parents[v1Parents] = v2Parents;
 }
 
 bool Find(vector<int>& parents, int v1, int v2)
